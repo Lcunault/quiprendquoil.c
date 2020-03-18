@@ -3,7 +3,9 @@ const app = express();
 const port = 3000;
 
 app.get('/', function(req, res) {
-  res.send('Hello lucas');
+  res.render('index');
 });
 
-app.listen(port, () => console.log(`Front app listening on port ${port}!`));
+app.listen(process.env.PORT, () => console.log(`Front app listening on port ${port}!`));
+const dotenv = require('dotenv');
+app.set('view engine', 'pug');
